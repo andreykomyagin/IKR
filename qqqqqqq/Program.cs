@@ -16,7 +16,7 @@ for (int i = 0; i < massiv.Length; i++)
 
 Console.WriteLine();
 int b = 0;
-for (int i = 0; i < massiv.Length; i++) 
+for (int i = 0; i < massiv.Length; i++)
 {
     if (massiv[i].Length == 3)
     {
@@ -44,24 +44,24 @@ if (l != 0)
     {
         massiv_2[j] = "";
     }
+    int nomer = 0;
+    int nomer_2 = 0;
 
-    for (int j = 0; j < massiv.Length; j++)
+    while (nomer < massiv.Length)
     {
-        if (massiv[j].Length == 3)
+        if (massiv[nomer].Length == 3)
         {
-            for (int v = 0; v < massiv_2.Length; v++)
-            {
-                if (massiv_2[v] == "")
-                {
-                    massiv_2[v] = massiv[j];
-                }
-            }
+            massiv_2[nomer_2] = massiv[nomer];
+            nomer_2++;
         }
+        nomer++;
     }
+
+
 
     for (int j = 0; j < massiv_2.Length; j++)
     {
-        Console.WriteLine($"{massiv_2[j]}"+$" - {j+1} слово");
+        Console.WriteLine($"{massiv_2[j]}" + $" - {j + 1} слово");
     }
 
     Console.WriteLine();
@@ -69,6 +69,7 @@ if (l != 0)
 }
 else
 {
+    Console.WriteLine("");
     Console.WriteLine("Таких слов нет!");
 }
 
