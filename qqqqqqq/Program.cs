@@ -1,13 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
-Randome n = new Randome();
-n = Next(1, 5);
-string[] massiv = new string[n];
+
+string[] massiv = new string[5];
 
 for (int i = 0; i < massiv.Length; i++)
 {
     massiv[i] = Console.ReadLine();
 }
+Console.WriteLine();
 for (int i = 0; i < massiv.Length; i++)
 {
     Console.WriteLine(massiv[i]);
@@ -15,52 +15,60 @@ for (int i = 0; i < massiv.Length; i++)
 
 
 Console.WriteLine();
-
-void Sorting(string[] massiv)
+int b = 0;
+for (int i = 0; i < massiv.Length; i++) 
 {
-    int i = 0;
-    while (i < massiv.Length)
+    if (massiv[i].Length == 3)
     {
-        if (massiv[i].Length == 3)
-        {
-            i++;
-        }
+        b++;
     }
-    Console.WriteLine($"Длина нового массива - {i}");
-    Console.WriteLine();
-    string[] massiv_2 = new string[i];
+}
+Console.WriteLine(b);
 
-    if (i != 0)
+
+int l = 0;
+for (int i = 0; i < massiv.Length; i++)
+{
+    if (massiv[i].Length == 3)
     {
-        for (int i = 0; i < massiv_2.Length; i++)
-        {
-            massiv_2[i] = "";
-        }
+        l++;
+    }
+}
+Console.WriteLine($"Длина нового массива - {l}");
+Console.WriteLine();
+string[] massiv_2 = new string[l];
 
-        for (int i = 0; i < massiv.Length; i++)
+if (l != 0)
+{
+    for (int j = 0; j < massiv_2.Length; j++)
+    {
+        massiv_2[j] = "";
+    }
+
+    for (int j = 0; j < massiv.Length; j++)
+    {
+        if (massiv[j].Length == 3)
         {
-            if (massiv[i].Length == 3)
+            for (int v = 0; v < massiv_2.Length; v++)
             {
-                for (int j = 0; j < massiv_2.Length; j++)
+                if (massiv_2[v] == "")
                 {
-                    if (massiv_2[j] != "")
-                    {
-                        massiv_2[j] = massiv[i];
-                    }
+                    massiv_2[v] = massiv[j];
                 }
             }
         }
-
-        for(int i = 0; i<massiv_2.Length; i++)
-        {
-            Console.WriteLine($"{massiv_2[i]} - {i+1} слово")
-        }
-
-        Console.WriteLine();
-        Console.Write("Задание выполнено!");
     }
-    else
+
+    for (int j = 0; j < massiv_2.Length; j++)
     {
-        Console.WriteLine("Таких слов нет!")
+        Console.WriteLine($"{massiv_2[j]}"+$" - {j+1} слово");
     }
+
+    Console.WriteLine();
+    Console.Write("Задание выполнено!");
 }
+else
+{
+    Console.WriteLine("Таких слов нет!");
+}
+
